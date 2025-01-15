@@ -8,6 +8,6 @@ const usersController = new UsersController();
 
 usersRoutes.post('/register', usersController.create);
 usersRoutes.get('/read', usersController.list);
-usersRoutes.delete('/delete/:id', usersController.delete);
+usersRoutes.delete('/delete', usersController.delete);
 
 export default usersRoutes;

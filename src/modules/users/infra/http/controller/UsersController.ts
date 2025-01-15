@@ -37,7 +37,7 @@ export default class UserController {
   }
 
   public async delete(req: Request, res: Response): Promise<Response> {
-    const { id } = req.params;
+    const { id } = req.body;
 
     const deleteUser = container.resolve(DeleteUserService);
 
