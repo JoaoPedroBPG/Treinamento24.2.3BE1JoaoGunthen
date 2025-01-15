@@ -7,6 +7,7 @@ const usersRoutes = Router();
 const usersController = new UsersController();
 
 usersRoutes.post('/register', usersController.create);
-usersRoutes.get('/list', usersController.list);
+usersRoutes.get('/read', usersController.list);
+usersRoutes.delete('/delete/:id', usersController.delete);
 
 export default usersRoutes;
