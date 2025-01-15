@@ -32,4 +32,10 @@ export default class UsersRepository implements IUsersRepository {
 
     return user;
   }
+
+  public async findAll(): Promise<Users[]> {
+    const users = await this.ormRepository.findMany();
+
+    return users;
+  }
 }
