@@ -2,7 +2,8 @@ import prisma from '@shared/infra/prisma/client';
 import { Pius, Prisma } from '@prisma/client';
 
 import IPiusRepository from '@modules/pius/repositories/IPiusRepository';
-import ICreatePiuDTO from '@modules/pius/dtos/ICreatePiu';
+import ICreatePiuDTO from '@modules/pius/dtos/ICreatePiuDTO';
+import IUpdatePiuDTO from '@modules/pius/dtos/IUpdatePiuDTO';
 
 export default class PiusRepository implements IPiusRepository {
   private ormRepository: Prisma.PiusDelegate<Prisma.RejectOnNotFound | Prisma.RejectPerOperation | undefined>
@@ -35,5 +36,14 @@ export default class PiusRepository implements IPiusRepository {
     await this.ormRepository.delete({
       where: { id },
     });
+  }
+
+  public async update(id: string, data: IUpdatePiuDTO): Promise<Pius> {
+    const piu = await this.ormRepository.update({
+      where: { id },
+      data,
+    });
+
+    return piu;
   }
 }
