@@ -52,4 +52,12 @@ export default class UsersRepository implements IUsersRepository {
       where: { id },
     });
   }
+
+  public async login(email: string, password: string): Promise<Users | null> {
+    const user = await this.ormRepository.findFirst({
+      where: { email, password },
+    });
+
+    return user;
+  }
 }
