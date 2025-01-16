@@ -1,0 +1,2 @@
+-- AddForeignKey
+ALTER TABLE "pius" ADD CONSTRAINT "pius_userId_fkey" FOREIGN KEY ("userId") REFERENCES "Users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

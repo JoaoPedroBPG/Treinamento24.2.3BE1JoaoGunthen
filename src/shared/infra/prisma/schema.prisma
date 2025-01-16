@@ -17,6 +17,8 @@ model Pius {
   created_at  DateTime @default(now())
   updated_at  DateTime @default(now())
 
+  user Users @relation(fields: [userId], references: [id])
+
   @@map("pius")
 }
 
@@ -29,4 +31,8 @@ model Users {
   password   String
   created_at DateTime @default(now())
   updated_at DateTime @default(now())
+
+  pius Pius[]
+
+
 }

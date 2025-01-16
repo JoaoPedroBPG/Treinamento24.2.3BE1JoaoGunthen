@@ -10,6 +10,6 @@ const routes = Router();
 // Users
 routes.use('', usersRoutes);
 routes.use('/sessions', sessionsRoutes);
-routes.use('/pius', piusRoutes);
+routes.use('/piu', piusRoutes);
 
 export default routes;

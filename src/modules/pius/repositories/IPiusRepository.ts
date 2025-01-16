@@ -1,11 +1,11 @@
 import { Pius } from '@prisma/client';
 
-import ICreateUserDTO from '../dtos/ICreatePiu';
+import ICreatePiuDTO from '../dtos/ICreatePiu';
 
 interface IPiusRepository {
   findById(id: string): Promise<Pius | null>;
   delete(id: string): Promise<void>;
-  create(data: ICreateUserDTO): Promise<Pius>;
+  create(data: ICreatePiuDTO): Promise<Pius>;
   findAll(): Promise<Pius[]>;
 }
 

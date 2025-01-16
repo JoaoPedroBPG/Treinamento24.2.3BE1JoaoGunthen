@@ -8,7 +8,7 @@ const piusRoutes = Router();
 
 const piusController = new PiusController();
 
-piusRoutes.post('/register', createValidation, validateTest, piusController.create);
+piusRoutes.post('/post', piusController.create);
 piusRoutes.get('/read', piusController.list);
 piusRoutes.delete('/delete/:id', piusController.delete);
 
