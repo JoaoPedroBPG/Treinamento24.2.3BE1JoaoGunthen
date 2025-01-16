@@ -52,12 +52,15 @@ export default class PiusController {
     const { texto } = req.body;
 
     const updatePiu = container.resolve(UpdatePiuService);
+    const getPiu = container.resolve(GetPiuService);
+
+    const piu = await getPiu.execute(id);
 
     await updatePiu.execute({
       id,
       texto,
     });
 
-    return res.status(200).json({ message: 'Piu updated' });
+    return res.status(200).json({ message: 'Piu updated', updatedPiu: piu });
   }
 }
