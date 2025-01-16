@@ -1,0 +1,14 @@
+model Pius {
+  id              String   @id @default(uuid())
+  userId          String   
+  texto           String   
+  likes           Int      @default(0) 
+  comentarios     Int      @default(0) 
+  dataDePublicacao DateTime @default(now()) 
+  dataDeEdicao    DateTime @updatedAt 
+  
+ 
+  user Users @relation(fields: [userId], references: [id])
+
+  @@map("pius")
+}
