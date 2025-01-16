@@ -1,0 +1,11 @@
+model Pius {
+  id          String   @id @default(uuid())
+  userId      String
+  texto       String
+  likes       Int      @default(0)
+  comentarios Int      @default(0)
+  created_at  DateTime @default(now())
+  updated_at  DateTime @default(now())
+
+  @@map("pius")
+}
